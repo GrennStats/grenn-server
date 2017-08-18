@@ -8,6 +8,7 @@ export interface SearchPlayerResponse {
     data: SearchPlayerObject[];
 }
 
+@Component()
 export class ApiSearchService {
 
     /**
