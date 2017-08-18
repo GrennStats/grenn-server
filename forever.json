@@ -1,6 +1,6 @@
 {
   "uid": "grenn-server",
-  "script": "index.js"
+  "script": "dist/server.js"
 }
 
 
