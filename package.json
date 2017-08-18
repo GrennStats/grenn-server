@@ -4,6 +4,7 @@
   "description": "Server for Grenn.io",
   "license": "MIT",
   "scripts": {
+    "nodemon": "nodemon -L",
     "start": "node index.js",
     "prestart:prod": "tsc",
     "start:prod": "node dist/server.js"
@@ -14,8 +15,10 @@
     "@nestjs/microservices": "^3.0.1",
     "@nestjs/testing": "^3.0.0",
     "@nestjs/websockets": "^3.0.0",
+    "@types/mongoose": "^4.7.20",
     "@types/q": "^1.0.3",
     "@types/request-promise-native": "^1.0.6",
+    "mongoose": "^4.11.7",
     "redis": "^2.7.1",
     "reflect-metadata": "^0.1.10",
     "request": "^2.81.0",
@@ -25,6 +28,7 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.5",
+    "nodemon": "^1.11.0",
     "ts-node": "2.1.0"
   }
 }
