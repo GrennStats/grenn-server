@@ -6,9 +6,8 @@ export class HealthCheckController {
 
     @Get("health/grenn")
     public checkGrennHealth(@Res() res: Res) {
-        res.status(HttpStatus.OK).json({
-            message: "Healthy"
-        });
+        res.status(HttpStatus.OK)
+            .json({message: "Healthy"});
     }
 
     @Get("health/whatasha")

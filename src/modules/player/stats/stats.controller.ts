@@ -10,6 +10,7 @@ export class PlayerStatsController {
     public async getPlayersCurrentStats(@Response() res: Res, @Param("playerId") playerId: string) {
         const stats = await this.stats.getPlayersCurrentStats(playerId);
 
-        res.status(HttpStatus.OK).json(stats);
+        res.status(HttpStatus.OK)
+            .json(stats);
     }
 }
