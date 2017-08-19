@@ -1,5 +1,5 @@
 import {ApiStatsService, ApiCurrentStatsDataResponse} from "./services/api-stats.service";
-import {DbStatsService} from "./services/db-stats.service";
+import {DbStatsService, StatsTimeline} from "./services/db-stats.service";
 import {StatsConfig} from "./stats.config";
 import {Component} from "@nestjs/common";
 
@@ -17,7 +17,7 @@ export class StatsRepository {
      * @param playerId
      */
     protected async needStatsToBeStored(playerId: string) {
-        return await this.dbStats.hasStatsOfToday(playerId);
+        return !await this.dbStats.getStatsOfToday(playerId);
     }
 
     /**
@@ -43,5 +43,14 @@ export class StatsRepository {
         await this.storeStats(playerId, stats);
 
         return stats;
+    }
+
+    /**
+     * Gets all timeline stats of a player
+     *
+     * @param playerId
+     */
+    public async getPlayersTimelineStats(playerId: string): Promise<StatsTimeline> {
+        return this.dbStats.getStatsOfPlayer(playerId);
     }
 }

@@ -13,4 +13,12 @@ export class PlayerStatsController {
         res.status(HttpStatus.OK)
             .json(stats);
     }
+
+    @Get("player/:playerId/stats/timeline")
+    public async getPlayersTimelineStats(@Response() res: Res, @Param("playerId") playerId: string) {
+        const stats = await this.stats.getPlayersTimelineStats(playerId);
+
+        res.status(HttpStatus.OK)
+            .json(stats);
+    }
 }
