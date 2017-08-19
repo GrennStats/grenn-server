@@ -1,15 +1,18 @@
 import {Component} from "@nestjs/common";
 import {HttpException} from "@nestjs/core";
 import * as request from "request-promise-native";
-import {encodePlayerId} from "../player.utility";
+import {encodePlayerId} from "../../player.utility";
 import {ApiCurrentStatsDataResponse} from "./api-stats.service";
-import {statsModel} from "./stats.model";
+import {StatsModel} from "./../stats.model";
 
 @Component()
 export class DbStatsService {
+    public async hasStatsOfToday(playerId: string): Promise<boolean> {
+        return false;
+    }
 
     public async saveStatsOfPlayer(playerId: string, stats: ApiCurrentStatsDataResponse): Promise<void> {
-            statsModel.create({
+        await StatsModel.create({
             playerId: playerId,
             stats: stats
         });

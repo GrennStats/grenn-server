@@ -1,9 +1,9 @@
 import {Component} from "@nestjs/common";
 import {HttpException} from "@nestjs/core";
 import * as request from "request-promise-native";
-import {encodePlayerId} from "../player.utility";
-import {HeroKeyObject} from "../../../typings/hero/hero-keys.type";
-import {StatsType} from "../../../typings/player/stats/stats.types";
+import {encodePlayerId} from "../../player.utility";
+import {HeroKeyObject} from "../../../../typings/hero/hero-keys.type";
+import {StatsType} from "../../../../typings/player/stats/stats.types";
 
 export interface ApiCurrentStatsDataResponse extends HeroKeyObject<StatsType> {
     all: StatsType;
