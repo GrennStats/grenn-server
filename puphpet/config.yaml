@@ -19,15 +19,18 @@ vagrantfile:
                         check_guest_tools: 0
                         update_guest_tools: 0
                 machines:
-                    vflm_lwxpia06afy4:
+                    vflm_1z5l4nfpagnz:
                         id: machine1
                         hostname: machine1.puphpet
                         network:
                             private_network: 192.168.56.101
                             forwarded_port:
-                                vflmnfp_ulaexmrdtmu2:
+                                vflmnfp_e6rr4vo6plxp:
                                     host: '8080'
                                     guest: '8080'
+                                vflmnfp_a6obct0m0p2y:
+                                    host: '27017'
+                                    guest: '27017'
                         memory: '512'
                         cpus: '1'
         provision:
@@ -40,7 +43,7 @@ vagrantfile:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
         synced_folder:
-            vflsf_xxtugqjr60zp:
+            vflsf_m1yak50tein8:
                 owner: www-data
                 group: www-data
                 source: ./
@@ -128,7 +131,7 @@ nginx:
         names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_28tvevuis34f:
+        nxv_ttvptuqku21v:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -137,7 +140,7 @@ nginx:
             client_max_body_size: 1m
             ssl: '0'
             locations:
-                nxvl_xoa3xivbhyt8:
+                nxvl_auy3k3paoiqn:
                     www_root: /var/www/awesome/web
                     location: /
                     autoindex: 'off'
@@ -156,7 +159,7 @@ nginx:
                     fastcgi_split_path: ''
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_rchxeyj1027l:
+                nxvl_5x9rzes13z9z:
                     www_root: /var/www/awesome/web
                     location: '~ ^/(app_dev|config)\.php(/|$)'
                     autoindex: 'off'
@@ -175,7 +178,7 @@ nginx:
                         - '$path_info $fastcgi_path_info'
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_2g9krqszcirx:
+                nxvl_fehgasibxvf9:
                     www_root: /var/www/awesome/web
                     location: '~ ^/index\.php(/|$)'
                     autoindex: 'off'
@@ -193,7 +196,7 @@ nginx:
                         - '$path_info $fastcgi_path_info'
                     proxy: ''
                     proxy_redirect: ''
-                nxvl_zw11cxfkdatc:
+                nxvl_4f9tk5fw6fz2:
                     www_root: /var/www/awesome/web
                     location: '~ ^/app\.php(/|$)'
                     autoindex: 'off'
@@ -227,7 +230,7 @@ apache:
         - proxy_fcgi
         - rewrite
     vhosts:
-        av_oe9dtoe4uplo:
+        av_be7mj2lga3qn:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -244,7 +247,7 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_hfbgnrj044oa:
+                avd_eo5kl3nuy2uh:
                     path: /var/www/awesome/web
                     directoryindex: 'index.php app.dev'
                     options:
@@ -258,21 +261,21 @@ apache:
                     custom_fragment: ''
                     provider: directory
             files_match:
-                avfm_2rtj5tmqbuun:
+                avfm_mrkkk58xwsof:
                     path: (app_dev|config)\.php$
                     sethandler: 'proxy:fcgi://127.0.0.1:9000'
                     setenv:
                         - 'APP_ENV dev'
                     custom_fragment: ''
                     provider: filesmatch
-                avfm_agudo97e7edw:
+                avfm_rrpretjiqlh1:
                     path: app\.php$
                     sethandler: 'proxy:fcgi://127.0.0.1:9000'
                     setenv:
                         - 'APP_ENV prod'
                     custom_fragment: ''
                     provider: filesmatch
-                avfm_gsgewb9ufub8:
+                avfm_v25qbmus1axb:
                     path: \.php$
                     sethandler: 'proxy:fcgi://127.0.0.1:9000'
                     custom_fragment: ''
@@ -302,7 +305,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_68ed63srchuq:
+        phpfp_mfx4f7i88y01:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -345,7 +348,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        rv_1zmnefbuuxlr:
+        rv_9fpwg2ybgrht:
             default: '1'
             bundler: '1'
             version: 2.3.1
@@ -369,15 +372,15 @@ mariadb:
         root_password: '123'
         override_options: {  }
     users:
-        mariadbnu_x2akx0ngj22x:
+        mariadbnu_u56boicyjxej:
             name: dbuser
             password: '123'
     databases:
-        mariadbnd_fiia41yu68o8:
+        mariadbnd_mafhwd3rwkr8:
             name: dbname
             sql: ''
     grants:
-        mariadbng_7dn7hiuu96x4:
+        mariadbng_bcvegp718wac:
             user: dbuser
             table: '*.*'
             privileges:
@@ -389,15 +392,15 @@ mysql:
         root_password: '123'
         override_options: {  }
     users:
-        mysqlnu_vam6o0v6jkc0:
+        mysqlnu_7q7csj6d1drm:
             name: dbuser
             password: '123'
     databases:
-        mysqlnd_xbm5scvpq4kw:
+        mysqlnd_xe5tfqcuj3h3:
             name: dbname
             sql: ''
     grants:
-        mysqlng_2uq74o6as3ho:
+        mysqlng_e1u43uiu39c8:
             user: dbuser
             table: '*.*'
             privileges:
@@ -421,7 +424,7 @@ mongodb:
     globals:
         version: 2.6.0
     databases:
-        mongodbnuad_eig6h4jmpyow:
+        mongodbnuad_y4ro2qx37485:
             name: stats
             user: grenn-stats
             password: '123'
@@ -464,7 +467,7 @@ elastic_search:
         version: 2.3.1
         java_install: true
     instances:
-        esi_vgfrcszwamve:
+        esi_f61j18fgdbz5:
             name: es-01
 solr:
     install: '0'
