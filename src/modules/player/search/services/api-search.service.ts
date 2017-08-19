@@ -1,8 +1,8 @@
 import {Component} from "@nestjs/common";
 import {HttpException} from "@nestjs/core";
 import * as request from "request-promise-native";
-import {encodePlayerId} from "../player.utility";
-import {SearchPlayerObject} from "../../../typings/player/search/search.types";
+import {encodePlayerId} from "../../player.utility";
+import {SearchPlayerObject} from "../../../../typings/player/search/search.types";
 
 export interface SearchPlayerResponse {
     data: SearchPlayerObject[];
