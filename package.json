@@ -7,7 +7,7 @@
     "nodemon": "nodemon -L",
     "start": "node index.js",
     "prestart:prod": "tsc",
-    "start:prod": "PORT=80 forever start ./forever.json"
+    "start:prod": "PORT=80 forever -a start ./forever.json"
   },
   "dependencies": {
     "@nestjs/common": "^3.0.0",
