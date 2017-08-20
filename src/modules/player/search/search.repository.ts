@@ -7,7 +7,7 @@ export class SearchRepository {
     constructor(private apiSearch: ApiSearchService, private dbSearch: DbSearchService) {}
 
     protected async saveLogQuery(playerId: string): Promise<void> {
-        this.dbSearch.saveStatsOfPlayer(playerId);
+        this.dbSearch.saveSearch(playerId);
     }
 
     public async getMostPopularSearches(): Promise<SearchRanking> {

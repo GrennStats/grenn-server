@@ -20,9 +20,9 @@ export class DbSearchService {
         return response;
     }
 
-    public async saveStatsOfPlayer(playerId: string): Promise<void> {
+    public async saveSearch(playerId: string): Promise<void> {
         await SearchModel.create({
-            playerId: playerId,
+            playerId: playerId.toLowerCase(),
         });
     }
 }
