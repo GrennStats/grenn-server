@@ -6,6 +6,7 @@ import {SearchModel} from "./../search.model";
 
 @Component()
 export class DbSearchService {
+
     public async saveStatsOfPlayer(playerId: string): Promise<void> {
         await SearchModel.create({
             playerId: playerId,
